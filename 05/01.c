@@ -11,9 +11,11 @@ int main(int argc, char *argv[])
     fprintf(stderr, "fork failed\n");
     exit(1);
   } else if (rc == 0) {
+    printf("var is %d\n", var);
     var = 200;
     printf("hello, I am child (pid:%d) and var is %d\n", (int) getpid(), var);
   } else {
+    printf("var is %d\n", var);
     var = 300;
     printf("hello, I am parent of %d (pid:%d) and var is %d\n", rc, (int) getpid(), var);
   }

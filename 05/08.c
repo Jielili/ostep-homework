@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
+    printf("%d, %d\n", pipefd[0], pipefd[1]);
+
     if (cpid == 0) {    /* Child reads from pipe */
         close(pipefd[1]);          /* Close unused write end */
 
